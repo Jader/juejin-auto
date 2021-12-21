@@ -1,4 +1,4 @@
-## 掘金每日自动签到，自动抽奖
+## 掘金每日自动签到，自动抽奖，自动粘喜气
 
 本项目使用`Github Action`来部署自动签到程序，无需自己购买服务器，安全可靠且方便。另外支持钉钉机器人通知，中了大奖第一时间便可知晓。
 
@@ -31,7 +31,9 @@
 本程序默认是在北京时间凌晨 2 点去执行，如果需要修改签到时间，可以修改`.github/workflows/check_in.yml`文件中的`cron`字段，该字段文档可以[查看这里](https://docs.github.com/en/actions/reference/events-that-trigger-workflows)。
 
 ### 抽奖梭哈
+
 在 Github 的 Secrets 中在添加一个变量，Name 是`ALL_IN`，Value 是 `true`。
+
 ### 接入钉钉机器人
 
 抽奖结果可以在`掘金`和`Github Action`上查看，但是有的时候我们需要更加实时的查看中奖信息，这个时候考虑接入钉钉机器人，具体如下：
@@ -76,24 +78,21 @@
 
 #### 第二步，创建应用
 
-注册成功后，点「管理企业」进入管理界面，选择「应用管理」 → 「自建」 →  「创建应用」
+注册成功后，点「管理企业」进入管理界面，选择「应用管理」 → 「自建」 → 「创建应用」
 
 ![](https://theseven.ftqq.com/20210208143228.png)
 
 应用名称随意填，可见范围选择公司名。
 
-
 ![](https://theseven.ftqq.com/20210208143327.png)
 
-创建完成后进入应用详情页，可以得到应用ID( `agentid` )①，应用Secret( `secret` )②。
-
+创建完成后进入应用详情页，可以得到应用 ID( `agentid` )①，应用 Secret( `secret` )②。
 
 ![](https://theseven.ftqq.com/20210208143553.png)
 
-#### 第三步，获取企业ID
+#### 第三步，获取企业 ID
 
-进入「[我的企业](https://work.weixin.qq.com/wework_admin/frame#profile)」页面，拉到最下边，可以得到企业ID③。
-
+进入「[我的企业](https://work.weixin.qq.com/wework_admin/frame#profile)」页面，拉到最下边，可以得到企业 ID③。
 
 #### 第四步，推送消息到微信
 
@@ -103,11 +102,9 @@
 
 PS：如果出现`接口请求正常，企业微信接受消息正常，个人微信无法收到消息`的情况：
 
-1. 进入「我的企业」 → 「[微信插件](https://work.weixin.qq.com/wework_admin/frame#profile/wxPlugin)」，拉到最下方，勾选 “允许成员在微信插件中接收和回复聊天消息”
-![](https://img.ams1.imgbed.xyz/2021/06/01/HPIRU.jpg)
+1. 进入「我的企业」 → 「[微信插件](https://work.weixin.qq.com/wework_admin/frame#profile/wxPlugin)」，拉到最下方，勾选 “允许成员在微信插件中接收和回复聊天消息” ![](https://img.ams1.imgbed.xyz/2021/06/01/HPIRU.jpg)
 
-2. 在企业微信客户端 「我」 → 「设置」  → 「新消息通知」中关闭 “仅在企业微信中接受消息” 限制条件
-![](https://img.ams1.imgbed.xyz/2021/06/01/HPKPX.jpg)
+2. 在企业微信客户端 「我」 → 「设置」 → 「新消息通知」中关闭 “仅在企业微信中接受消息” 限制条件 ![](https://img.ams1.imgbed.xyz/2021/06/01/HPKPX.jpg)
 
 #### 第五步，在 github setting 添加变量
 
@@ -117,25 +114,18 @@ PS：如果出现`接口请求正常，企业微信接受消息正常，个人�
 
 2. Name 是`WX_APP_SECRET`，Value 是第二步 Secret。
 
-3. Name 是`WX_COMPANY_ID`，Value 是第三步的 企业ID。
+3. Name 是`WX_COMPANY_ID`，Value 是第三步的 企业 ID。
 
 ### 接入飞书机器人
 
 飞书机器人通知依赖于飞书，通过飞书向指定群组推送消息，具体操作如下:
 
-1. 打开飞书，聊天列表顶部加号`创建群组`,群名称任意，点击创建
-![](./statics/imgs/feishu1.png)
+1. 打开飞书，聊天列表顶部加号`创建群组`,群名称任意，点击创建 ![](./statics/imgs/feishu1.png)
 
-2. 进入群组，点击群组设置按钮添加机器人
-![](./statics/imgs/feishu2.png)
+2. 进入群组，点击群组设置按钮添加机器人 ![](./statics/imgs/feishu2.png)
 
-3. 选择自定义机器人
-![](./statics/imgs/feishu3.png)
+3. 选择自定义机器人 ![](./statics/imgs/feishu3.png)
 
-4. 机器人名称和描述随意填写,点击下一步
-![](./statics/imgs/feishu4.png)
+4. 机器人名称和描述随意填写,点击下一步 ![](./statics/imgs/feishu4.png)
 
-5. 在`安全设置`中勾选`签名校验`,复制下webhook地址和签名校验内容，在 Github 的 Secrets 中在添加2个变量，Name 是`FEISHU_WEBHOOK`，Value 填写 webhook地址,Name 是`FEISHU_SECRET`，Value 填写的签名校验内容
-![](./statics/imgs/feishu5.png)
-![](./statics/imgs/feishu6.png)
-![](./statics/imgs/feishu7.png)
+5. 在`安全设置`中勾选`签名校验`,复制下 webhook 地址和签名校验内容，在 Github 的 Secrets 中在添加 2 个变量，Name 是`FEISHU_WEBHOOK`，Value 填写 webhook 地址,Name 是`FEISHU_SECRET`，Value 填写的签名校验内容 ![](./statics/imgs/feishu5.png) ![](./statics/imgs/feishu6.png) ![](./statics/imgs/feishu7.png)
