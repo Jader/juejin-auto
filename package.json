@@ -1,7 +1,7 @@
 {
   "name": "juejin-auto-checkin",
   "version": "1.0.0",
-  "description": "掘金每日自动签到，自动抽奖",
+  "description": "掘金每日自动签到，自动抽奖，自动粘喜气",
   "main": "./src/index",
   "scripts": {
     "start": "node ./src/index",
@@ -12,6 +12,7 @@
     "掘金",
     "签到",
     "抽奖",
+    "粘喜气",
     "自动"
   ],
   "author": "Orange",
