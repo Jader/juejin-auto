@@ -74,5 +74,5 @@ async function dipLucky() {
     ALL_IN === 'true' ? draw_all() : draw()
   })
   const dipMsg = await dipLucky()
-  dipMsg(dipMsg)
+  message(dipMsg)
 })()
