@@ -129,3 +129,17 @@ PS：如果出现`接口请求正常，企业微信接受消息正常，个人�
 4. 机器人名称和描述随意填写,点击下一步 ![](./statics/imgs/feishu4.png)
 
 5. 在`安全设置`中勾选`签名校验`,复制下 webhook 地址和签名校验内容，在 Github 的 Secrets 中在添加 2 个变量，Name 是`FEISHU_WEBHOOK`，Value 填写 webhook 地址,Name 是`FEISHU_SECRET`，Value 填写的签名校验内容 ![](./statics/imgs/feishu5.png) ![](./statics/imgs/feishu6.png) ![](./statics/imgs/feishu7.png)
+
+### 接入企业微信机器人
+
+企业微信机器人通知依赖于企业微信，通过企业微信向指定群组推送消息，具体操作如下:
+
+1. 打开企业微信，聊天列表顶部加号`创建群组`,群名称任意，点击创建 ![](./statics/imgs/workwx1.png)
+
+2. 进入群组，点击群组设置按钮添加群机器人 ![](./statics/imgs/workwx2.png)
+
+3. 点击“新创建一个机器人” ![](./statics/imgs/workwx3.png)
+
+4. 机器人名称和ICON随意填写,点击下一步 ![](./statics/imgs/workwx4.png)
+
+5. 在 Github 的 Secrets 中在添加一个变量，Name 是`WORKWX_WEBHOOK`，Value 是刚刚创建机器人 Webhook 地址。![](./statics/imgs/workwx5.png)

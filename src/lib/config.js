@@ -8,4 +8,5 @@ module.exports = {
   WX_APP_SECRET: process.env.WX_APP_SECRET || '', // 应用 secret
   FEISHU_WEBHOOK: process.env.FEISHU_WEBHOOK || '',
   FEISHU_SECRET: process.env.FEISHU_SECRET || '',
+  WORKWX_WEBHOOK: process.env.WORKWX_WEBHOOK || '',
 }

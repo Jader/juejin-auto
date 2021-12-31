@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./src/index",
     "test:bot": "node ./test/test-dingtalk-bot",
-    "test:api": "node ./test/test-api"
+    "test:api": "node ./test/test-api",
+    "test:workwxbot": "node ./test/test-workwx-bot"
   },
   "keywords": [
     "掘金",
