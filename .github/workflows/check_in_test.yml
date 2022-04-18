@@ -1,4 +1,4 @@
-name: 掘金自动签到
+name: 掘金自动签到测试
 on:
   push:
 jobs:
@@ -7,10 +7,7 @@ jobs:
     steps:
       # See also: https://github.com/actions/checkout/issues/760
       - name: Trust My Directory
-        run: 
-          apt-get update
-          apt-get install -y git
-          export GIT_CEILING_DIRECTORIES=/github/workspace
+        run: export GIT_CEILING_DIRECTORIES=/github/workspace
 
       # 切换分支
       - name: Checkout
