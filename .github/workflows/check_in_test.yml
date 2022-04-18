@@ -7,7 +7,7 @@ jobs:
     steps:
       # See also: https://github.com/actions/checkout/issues/760
       - name: Trust My Directory
-        run: export GIT_CEILING_DIRECTORIES=/home/runner/work/juejin-auto/juejin-auto
+        run: export GIT_CEILING_DIRECTORIES=/github
 
       # 切换分支
       - name: Checkout
