@@ -7,10 +7,7 @@ jobs:
     steps:
       # See also: https://github.com/actions/checkout/issues/760
       - name: Trust My Directory
-        run: |
-          apt-get update
-          apt-get install -y git
-          export GIT_CEILING_DIRECTORIES=/github
+        run: git config --global --add safe.directory "/github"
 
       # 切换分支
       - name: Checkout
