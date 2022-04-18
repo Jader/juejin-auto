@@ -6,12 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # See also: https://github.com/actions/checkout/issues/760
-      - name: work around permission issue
-        run: git config --global --add safe.directory /github/workspace
+      - name: Trust My Directory
+        run: 
+          apt-get update
+          apt-get install -y git
+          export GIT_CEILING_DIRECTORIES=/github/workspace
 
       # 切换分支
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
 
       # 下载 git submodule
       - uses: srt32/git-actions@v0.0.3
