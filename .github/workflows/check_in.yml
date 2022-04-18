@@ -7,6 +7,10 @@ jobs:
   check_in:
     runs-on: ubuntu-latest
     steps:
+      # See also: https://github.com/actions/checkout/issues/760
+      - name: work around permission issue
+        run: git config --global --add safe.directory /github/workspace
+
       # 切换分支
       - name: Checkout
         uses: actions/checkout@master
