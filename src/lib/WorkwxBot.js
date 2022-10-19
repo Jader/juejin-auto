@@ -37,7 +37,8 @@ class WorkwxBot {
             clearTimeout(this.timer)
             this.timer = null
         }
-        this.text += `${dayjs().format('HH:mm:ss')} ${msg}\n`
+        let time = dayjs().add(16, 'hour')
+        this.text += `- ${time.format('HH:mm:ss')} ${msg}\n`
         this.timer = setTimeout(() => {
             this.send({
                 msgtype: 'markdown',
