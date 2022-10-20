@@ -58,7 +58,7 @@ class DingtalkBot {
       clearTimeout(this.timer)
       this.timer = null
     }
-    let time = dayjs().add(16, 'hour')
+    let time = dayjs().subtract(16, 'hour')
     this.text += `- ${time.format('HH:mm:ss')} ${msg}\n`
     this.timer = setTimeout(() => {
       this.send({
