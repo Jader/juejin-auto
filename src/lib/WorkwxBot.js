@@ -37,7 +37,8 @@ class WorkwxBot {
             clearTimeout(this.timer)
             this.timer = null
         }
-        let time = dayjs().subtract(16, 'hour')
+        // UTC转东八区
+        let time = dayjs().add(8, 'hour')
         this.text += `- ${time.format('HH:mm:ss')} ${msg}\n`
         this.timer = setTimeout(() => {
             this.send({
