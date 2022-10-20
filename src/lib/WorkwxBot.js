@@ -37,7 +37,7 @@ class WorkwxBot {
             clearTimeout(this.timer)
             this.timer = null
         }
-        // UTC转东八区
+        // 由于GitHub Action使用的是UTC时间 所以需要转成东八区
         let time = dayjs().add(8, 'hour')
         this.text += `- ${time.format('HH:mm:ss')} ${msg}\n`
         this.timer = setTimeout(() => {
